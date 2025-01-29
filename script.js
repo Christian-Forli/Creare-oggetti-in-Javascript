@@ -1,20 +1,29 @@
 let animale1 = {
     specie: "mucca",
     razza: "chianina",
-    zampe: 4
+    zampe: 4,
+    caratteristicheComplete: function() {
+        return `Specie: ${this.specie}, Razza: ${this.razza}, Zampe: ${this.zampe}`;
+    }
 };
 let animale2 = {
     specie: "cane",
     razza: "bassotto",
-    zampe: 4
+    zampe: 4,
+    caratteristicheComplete: function() {
+        return `Specie: ${this.specie}, Razza: ${this.razza}, Zampe: ${this.zampe}`;
+    }
 };
 let animale3 = {
     specie: "gallina",
     razza: "andalusa",
-    zampe: 2
+    zampe: 2,
+    caratteristicheComplete: function() {
+        return `Specie: ${this["specie"]}, Razza: ${this["razza"]}, Zampe: ${this["zampe"]}`;
+    }
 };
 function mostraAnimale(animale) {
-    let descrizione = `Specie: ${animale.specie}, Razza: ${animale.razza}, Zampe: ${animale.zampe}`;
+    let descrizione = animale.caratteristicheComplete();
     document.getElementById("descrizione").textContent = descrizione;
 }
 document.getElementById("animale1").addEventListener("click", function() {
